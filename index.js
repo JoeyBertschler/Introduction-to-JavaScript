@@ -18,6 +18,11 @@ Do the following:
    HINT: no function required
 */
 
+let votingAge = 18
+
+if (votingAge >= 18) {
+  console.log(true)
+}
 
 
 /*
@@ -31,9 +36,13 @@ Do the following:
    HINT: no function required
 */
 
+let one = 1
+let two = 2
 
-
-
+if (one < two) {
+  one=one+1
+  console.log(one)
+}
 
 /*
 Task 1c - Convert Strings to Numbers
@@ -46,8 +55,10 @@ Do the following:
    HINT: look up the Number method
 */
 
-
-
+const declare = "1999"
+// declare.toInteger() python only?
+Number(declare)
+console.log(declare)
 
 /*
 Task 1d - Multiply
@@ -58,48 +69,51 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a,b){
+    return a*b
   }
-
+multiply(2,3)
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
-//Age in Dog years
+//Age in Doge years
+
 /*
 Do the following:
    1. Invoke the dogYears function below and pass an age value to it
-   2. Use the received value to calculate the age in dog years (1 human year is equal to 7 dog years)
+   2. Use the received value to calculate the age in doge years (1 human year is equal to 7 doge years)
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+    return age*7
 }
 
+dogYears(15)
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
-//Dog feeder - Depending on their weight and age, we need to know how many pounds of food to feed our dog each day!
+//Doge feeder - Depending on their weight and age, we need to know how many pounds of food to feed our doge each day!
 /*
 Use the hungryDog function and feeding requirements below to do the following:
   1. Invoke the hungryDog function below and pass it a weight value in pounds
-  2. Also, pass to hungryDog an age value in years (note: if the dog is a puppy, the age will be a decimal. For example: three months = 3/12 or .25)
-  3. Do the proper calculations and return the number of pounds of raw food to feed the dog/puppy in a day
+  2. Also, pass to hungryDog an age value in years (note: if the dog is a puppy, the age will be a decimal. 
+    For example: three months = 3/12 or .25)
+  3. Do the proper calculations and return the number of pounds of raw food to feed the doge/puppy in a day
   
-  REMEMBER: This program should handle correctly adult AND puppy ages and weights
+  REMEMBER: This program should handle correctly adult AND puppy ages and weights.
   
   Feeding Requirements:
 
-  Adult Dogs 1 year and older 
+  Adult Doges 1 year and older 
      up to 5 lbs - 5% of their body weight
      6 - 10 lbs - 4% of their body weight 
      11 - 15 lbs - 3% of their body weight 
      > 15lbs - 2% of their body weight 
 
-  Puppies less than 1 year
+  Puppies less than 1 year ..... most dogs aka. doges are considered puppies until they are 2 tho.. I'm confused. Old dog it is.
      2 - 4 months 10% of their body weight
      4 - 7 months 5% of their body weight 
      7 - 12 months 4% of their body weight
@@ -107,10 +121,48 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(age, pounds){
+  //doges
+  if (age >= 1 && pounds <= 5){ //takes either this one or the second one under pups for some reason
+    return pounds*0.05
   }
+  else if (age >= 1 && pounds <= 10 && pounds > 5){
+    return pounds*0.04
+  }
+  else if (age >= 1 && pounds <= 15 && pounds > 11){ //supposedly this category
+    return pounds*0.03
+  }
+  else if (age >= 1 && pounds > 15){
+    return pounds*0.02
+  }
+  //pups
+  else if (age < 4/12){
+    return pounds*0.1
+  }
+  else if (age < 7/12){
+    return pounds*0.05
+  }
+  else {
+    return pounds*0.04
+  }
+}
 
+console.log(hungryDog(1,15))
+
+
+  // if (age >=1){
+  //   if (pounds < 5){
+  //       return pounds*0.05;
+  //   } else if (pounds <= 10 && pounds >= 6){
+  //       return pounds*0.04;
+  //   } else if (pounds <= 15 && pounds >= 11){
+  //       return pounds*0.03;
+  //   } else {
+  //       return pounds*0.02;
+  //   }
+  // else {               code turned weird here, half transparent, threw lots of errors, please explain why
+  //   if (age < )
+  // }
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
