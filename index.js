@@ -195,9 +195,87 @@ Use the game function below to do the following:
    3. Return whether the user won, lost, or tied
    4. The strings returned need to match "you win!", "you lose!" or "it's a tie" */
 
-   function game(user, computer){
+// wanted to use switch but well, later I suppose. previous attempt below
 
-   }
+// I made multiple solutions. test doesn't like any of them. the first one right below
+// this line is my most recent one. I spent over 12 hours on this. I know I can get
+// the test file to accept it if I use a lenghty switch version but I overlooked the deadline.
+
+function game(user, computer){
+}
+
+// function game(user, computer){
+//   let computer = Math.random();
+//   if (computer <0.34){
+//       computer = "rock";
+//   } 
+//   else if (computer <=0.67){
+//            computer = "paper";
+//   }
+//   else{
+//            computer = "scissors";
+//   }
+
+// console.log(computer);
+// let user = prompt("rock, paper or scissors?");
+
+// let result = computer+user 
+
+// if (result = "rockscissors"   || 
+//              "scissorspaper"  ||
+//              "paperrock"){
+//   console.log("you lose!");
+// }
+// else if (result = "rockrock"  ||
+//                   "scissorsscissors" ||
+//                   "paperpaper"){
+//   console.log("it's a draw")
+// }
+// else {
+//   console.log("you win!")
+// }
+// }
+
+
+
+// not it either
+// let computer = Math.random();
+//   if (computer <0.34){
+//       computer = "rock";
+//   } 
+//   else if (computer <=0.67){
+//            computer = "paper";
+//   }
+//   else{
+//            computer = "scissors";
+//   }
+
+// let user = prompt("rock, paper or scissors?");
+
+// function game(user, computer){
+//   switch (user+computer){
+//     case "rockscissors":
+//     case "scissorspaper":
+//     case "paperrock":
+//       console.log("you win!");
+//       break;
+//     case "scissorsrock":
+//     case "paperscissors":
+//     case "rockpaper":
+//       console.log("you lose!");
+//       break;
+//     case "rockrock":
+//     case "scissorsscissors":
+//     case "paperpaper":
+//       console.log("it's a tie")
+//       break;
+//   }
+// }
+
+// console.log(game(1,2));
+
+
+ //  console.log(game(1,2))
 
 /* previous attempt. 
 
@@ -244,11 +322,11 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
+function miles(numberOfKilometers){
+  return numberOfKilometers*0.621371
+}
 
-
+console.log(miles(10))
 
 //Task 5b - Feet to CM
 /*
@@ -258,10 +336,11 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
- 
+function feet(numberOfFeet){
+  return numberOfFeet/30.48
+}
+
+console.log(feet(10)) 
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -271,13 +350,20 @@ function feet(/*add your code here*/){
 Using the annoyingSong function below do the following:
   1. Receive a starting number and start the count down from the number received 
   2. At each invocation, it should RETURN this string (note: the tests are expecting the same string as below):
-      "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
+      "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} 
+      bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(number){
+  for (count = number; count >= 1; count = count -1){
+    console.log("{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall");
+    }
   }
 
+let number = annoyingSong(2)
+
+//number lef tover how?
+// put in number in sentence how? don't know what to feed google, searched a lot, now asking slack
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -294,10 +380,26 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(points){
+  switch (true) {
+    case points >= 90:
+  console.log('you got an A');
+  break;
+    case points >= 80 && points <= 89:
+  console.log('you got a B');
+  break;
+    case points >= 70 && points <= 79:
+  console.log('you got a C');
+  break;
+    case points >= 60 && points <= 69:
+  console.log('you got a D');
+  break;
+    case points < 60:
+  console.log('you got an F');
+  break;
   }
-  
+}
+let points = grade(59)
   
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
