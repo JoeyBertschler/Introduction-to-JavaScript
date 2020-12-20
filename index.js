@@ -121,7 +121,7 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(age, pounds){
+function hungryDog(pounds, age){
   //doges
   if (age >= 1 && pounds <= 5){ //takes either this one or the second one under pups for some reason
     return pounds*0.05
@@ -147,8 +147,10 @@ function hungryDog(age, pounds){
   }
 }
 
-console.log(hungryDog(1,15))
+console.log(hungryDog(15,1))
 
+// below my prior failed attempt. really not sure how to solve this in an elegant fashion. 
+// I seem to have solved the problem now, but it's very crude
 
   // if (age >=1){
   //   if (pounds < 5){
@@ -172,11 +174,13 @@ console.log(hungryDog(1,15))
 Create a global variable that randomly generates the computer's choice
 Use Math.random to determine the computers choice (Math.random gives a random number between 0 and 1)
 
-HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
+HINT: While you can complete this with only conditionals based on strings, 
+it may help to equate choice to a number when using Math.random()
 
 Use the game function below to do the following:
   1. Receive 2 parameters the user's choice and the computer's choice
-  2. Return whether the user won, lost, or tied based on these rules of the game described below - the strings returned need to match the strings below exactly.
+  2. Return whether the user won, lost, or tied based on these rules of the game described below - 
+  the strings returned need to match the strings below exactly.
    - win should return "you win!"
    - lose should return "you lose!"
    - tie should return "it's a tie"
@@ -186,10 +190,47 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-    /*add your code here*/
+/* 1. Create a global variable that randomly generates the computer's choice,
+   2. Receive 2 parameters the user's choice and the computer's choice
+   3. Return whether the user won, lost, or tied
+   4. The strings returned need to match "you win!", "you lose!" or "it's a tie" */
+
+   function game(user, computer){
+
+   }
+
+/* previous attempt. 
+
+function game(user){
+  function computerChoice() {
+    const computerChoice = [rock, paper, scissors];
+    const randomNumber = Math.floor(Math.random()*3);
+    return computerChoice[randomNumber];
+  }
+  function userChoice(user) {
+    const computerChoice = computerChoice();
+    switch (user+computerChoice){
+      case "rockscissors":
+      case "scissorspaper":
+      case "paperrock":
+        console.log("you win!");
+        break;
+      case "scissorsrock":
+      case "paperscissors":
+      case "rockpaper":
+        console.log("you lose!");
+        break;
+      case "rockrock":
+      case "scissorsscissors":
+      case "paperpaper":
+        console.log("it's a tie")
+        break;
+    }
+  }
 }
-  
+console.log(game(2))
+*/
+
   
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
