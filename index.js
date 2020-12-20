@@ -173,7 +173,18 @@ console.log(hungryDog(15,1))
 /*
 Create a global variable that randomly generates the computer's choice
 Use Math.random to determine the computers choice (Math.random gives a random number between 0 and 1)
-
+*/
+let computerChoice = Math.random();
+  if (computerChoice <0.34){
+    computerChoice = "rock";
+  } 
+  else if (computerChoice <=0.67){
+    computerChoice = "paper";
+  }
+  else{
+    computerChoice = "scissors";
+  }
+/*
 HINT: While you can complete this with only conditionals based on strings, 
 it may help to equate choice to a number when using Math.random()
 
@@ -201,45 +212,47 @@ Use the game function below to do the following:
 // this line is my most recent one. I spent over 12 hours on this. I know I can get
 // the test file to accept it if I use a lenghty switch version but I overlooked the deadline.
 
+
 function game(user, computer){
+//let user = prompt("rock, paper or scissors?");
+computer = computerChoice
+let result = computerChoice+user 
+
+if (result = "rockscissors"   || 
+             "scissorspaper"  ||
+             "paperrock"){
+   return ("you lose!");
 }
+else if (result = "rockrock"  ||
+                  "scissorsscissors" ||
+                  "paperpaper"){
+  return ("it's a draw")
+}
+else {
+  return ("you win!")
+}
+}
+
+game("rock", computerChoice);
+
+//   switch (true) {
+//     case points >= 90:
+//       return 'you got an A'
+//     case points >= 80 && points <= 89:
+//       return 'you got a B';
+//     case points >= 70 && points <= 79:
+//       return 'you got a C';
+//     case points >= 60 && points <= 69:
+//       return 'you got a D';
+//     case points < 60:
+//       return 'you got an F';
+//   }
+// }
+// let points = grade(59)
+
 
 // function game(user, computer){
 //   let computer = Math.random();
-//   if (computer <0.34){
-//       computer = "rock";
-//   } 
-//   else if (computer <=0.67){
-//            computer = "paper";
-//   }
-//   else{
-//            computer = "scissors";
-//   }
-
-// console.log(computer);
-// let user = prompt("rock, paper or scissors?");
-
-// let result = computer+user 
-
-// if (result = "rockscissors"   || 
-//              "scissorspaper"  ||
-//              "paperrock"){
-//   console.log("you lose!");
-// }
-// else if (result = "rockrock"  ||
-//                   "scissorsscissors" ||
-//                   "paperpaper"){
-//   console.log("it's a draw")
-// }
-// else {
-//   console.log("you win!")
-// }
-// }
-
-
-
-// not it either
-// let computer = Math.random();
 //   if (computer <0.34){
 //       computer = "rock";
 //   } 
@@ -355,12 +368,11 @@ Using the annoyingSong function below do the following:
 */
 
 function annoyingSong(number){
-  for (count = number; count >= 1; count = count -1){
-    console.log("{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall");
-    }
+  for (let count = number; count >= 1; number--){
+    return (number+" bottles of soda on the wall, "+number+"bottles of soda, \
+    take one down pass it around "+(number-1)+"bottles of soda on the wall");
   }
-
-let number = annoyingSong(2)
+}
 
 //number lef tover how?
 // put in number in sentence how? don't know what to feed google, searched a lot, now asking slack
@@ -383,20 +395,15 @@ Using the grade function below do the following:
 function grade(points){
   switch (true) {
     case points >= 90:
-  console.log('you got an A');
-  break;
+      return 'you got an A';
     case points >= 80 && points <= 89:
-  console.log('you got a B');
-  break;
+      return 'you got a B';
     case points >= 70 && points <= 79:
-  console.log('you got a C');
-  break;
+      return 'you got a C';
     case points >= 60 && points <= 69:
-  console.log('you got a D');
-  break;
+      return 'you got a D';
     case points < 60:
-  console.log('you got an F');
-  break;
+      return 'you got an F';
   }
 }
 let points = grade(59)
